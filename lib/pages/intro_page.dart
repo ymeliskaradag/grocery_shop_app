@@ -37,8 +37,7 @@ class IntroPage extends StatelessWidget{
             style: TextStyle(color: Colors.grey[600]),
           ),
 
-          //const Spacer(),
-          const SizedBox(height: 48),
+          const Spacer(),
 
           //get started button
           GestureDetector(

@@ -75,7 +75,9 @@ class HomePage extends StatelessWidget{
                       itemPrice: value.shopItems[index][1],
                       imagePath: value.shopItems[index][2],
                       color: value.shopItems[index][3],
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<CardModel>(context, listen: false).addItemToCart(index);
+                      },
                     );
                   },
                 );

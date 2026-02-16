@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget{
             //good morning
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.0),
-                child: Text("Good morning"),
+                child: Text("Good morning,"),
             ),
 
             const SizedBox(height: 4,),
@@ -54,13 +54,15 @@ class HomePage extends StatelessWidget{
               ),
             ),
 
-            Expanded(
+            /*Expanded(
               child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
                 itemBuilder: (context, index) {
-                  return GroceryItemTile();
+                  return GroceryItemTile(
+
+                  );
                 },
               ),
-            )
+            )*/
           ],
         ),
       ),

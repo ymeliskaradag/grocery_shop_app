@@ -12,8 +12,8 @@ class IntroPage extends StatelessWidget{
         children: [
           //logo
           Padding(
-            padding: const EdgeInsets.only(left:80.0, right: 80.0, bottom: 40.0, top: 160.0),
-            child: Image.asset('lib/images/avocado.png'),
+            padding: const EdgeInsets.only(left:40.0, right: 40.0, bottom: 10.0, top: 100.0),
+            child: Image.asset('lib/images/notimerafiki.png'),
           ),
 
           //delivering groceries
@@ -37,7 +37,8 @@ class IntroPage extends StatelessWidget{
             style: TextStyle(color: Colors.grey[600]),
           ),
 
-          const Spacer(),
+          //const Spacer(),
+          const SizedBox(height: 48),
 
           //get started button
           GestureDetector(
@@ -47,7 +48,7 @@ class IntroPage extends StatelessWidget{
             )),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.deepPurple,
+                color: Colors.blue,
                 borderRadius: BorderRadius.circular(12),
               ),
               padding: const EdgeInsets.all(24),

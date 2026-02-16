@@ -65,6 +65,7 @@ flutter:
     - lib/images/banana.png
     - lib/images/chicken.png
     - lib/images/water.png
+    - lib/images/notimerafiki.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

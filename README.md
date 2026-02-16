@@ -34,10 +34,10 @@ This project was developed following a professional mobile application developme
     * **Advanced Logic:** Name-based matching algorithms to ensure data integrity during real-time search filtering.
 * **Navigation:** Managed via **Navigator** and **MaterialPageRoute** to handle seamless page transitions and data passing.
 * **Assets & Styling:**
-    * **Asset Management:** Local asset integration for images and icons.
+    * **Asset Management:** Local asset integration for images and icons (with Image.asset handling).
     * **Typography:** Professional editorial look using **Google Fonts (Noto Serif)**.
 * **Build Environment:**
-    * **IDE:** Developed using **Visual Studio Code**.
+    * **IDE:** Developed using **Android Studio**.
     * **Compatibility:** Optimized for **Java 21** and **Android Gradle Plugin (AGP) 8.2.2** to meet 2026 build standards.
 
 ### 👨‍💻 Development Notes

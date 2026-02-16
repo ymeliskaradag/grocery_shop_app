@@ -9,7 +9,16 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0, iconTheme: IconThemeData(color: Colors.black)),
+      appBar: AppBar(backgroundColor: Colors.transparent, elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios_new, //or Icons.chevron_left
+            color: Colors.black,
+            size: 20,
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Consumer<CardModel>(builder: (context, value, child) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,8 +35,37 @@ class CartPage extends StatelessWidget {
             ),
             //list of cart items
             Expanded(
-              child: value.cartItems.isEmpty
-                ? Center(child: Text("Your cart is empty!", style: GoogleFonts.notoSerif(fontSize: 18)))
+                child: value.cartItems.isEmpty
+                    ? Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.shopping_cart_outlined,
+                        size: 80,
+                        color: Colors.grey[400],
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        "Your cart is empty!",
+                        style: GoogleFonts.notoSerif(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[700],
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+
+                      Text(
+                        "Add items to start shopping",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey[500],
+                        ),
+                      ),
+                    ],
+                  ),
+                )
                 : ListView.builder(
                   itemCount: value.cartItems.length,
                   padding: EdgeInsets.all(12.0),

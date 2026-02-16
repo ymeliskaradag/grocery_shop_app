@@ -4,14 +4,11 @@ A modern, fast, and user-friendly grocery shopping application built with Flutte
 
 ## 📸 Screenshots
 <p align="left">
-  <img src="screenshots/intro_page.png" width="100" />
-  <img src="screenshots/home_page.png" width="100" />
-</p>
-
-<p align="left">
-  <img src="screenshots/search_feature.png" width="48" />
-  <img src="screenshots/cart_page.png" width="48" />
-  <img src="screenshots/empty_cart.png" width="48" />
+  <img src="screenshots/intro_page.png" width="200" />
+  <img src="screenshots/home_page.png" width="200" />
+  <img src="screenshots/search_feature.png" width="200" />
+  <img src="screenshots/cart_page.png" width="200" />
+  <img src="screenshots/empty_cart.png" width="200" />
 </p>
 
 ## ✨ Key Features

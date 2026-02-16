@@ -90,25 +90,6 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 12),
 
-            //divider
-/*            const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              child: Divider(
-
-              ),
-            ),
-
-            const SizedBox(height: 24),*/
-
-            //items + grid
-            /*const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: Text(
-                "Fresh Items",
-                style: TextStyle(fontSize: 16),
-              ),
-            ),*/
-
             Expanded(
               child: Consumer<CardModel>(builder: (context, value, child){
                 final filteredItems = value.shopItems.where((item) {

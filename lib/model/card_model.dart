@@ -19,9 +19,24 @@ class CardModel extends ChangeNotifier{
 
   //add item to cart
   void addItemToCart(String name) {
-    int index = _shopItems.indexWhere((item) => item[0] == name);
-    if (index != -1) {
-      _cartItems.add(_shopItems[index]);
+    int shopIndex = _shopItems.indexWhere((item) => item[0] == name);
+
+    if (shopIndex != -1) {
+      var item = _shopItems[shopIndex];
+      int cartIndex = _cartItems.indexWhere((element) => element[0] == name);
+
+      if (cartIndex >= 0) {
+        if (_cartItems[cartIndex].length <= 4) {
+          _cartItems[cartIndex].add(2);
+        } else {
+          _cartItems[cartIndex][4] = (_cartItems[cartIndex][4] ?? 1) + 1;
+        }
+      } else {
+        List newItem = List.from(item);
+        newItem.add(1);
+        _cartItems.add(newItem);
+      }
+
       notifyListeners();
     }
   }
@@ -35,8 +50,15 @@ class CardModel extends ChangeNotifier{
   //calculate total price
   String calculateTotal() {
     double totalPrice = 0;
-    for(int i = 0; i < _cartItems.length; i++){
-      totalPrice += double.parse(_cartItems[i][1]);
+    for (int i = 0; i < _cartItems.length; i++) {
+      double price = double.parse(_cartItems[i][1]);
+
+      int quantity = 1;
+      if (_cartItems[i].length > 4) {
+        quantity = _cartItems[i][4] ?? 1;
+      }
+
+      totalPrice += (price * quantity);
     }
     return totalPrice.toStringAsFixed(2);
   }

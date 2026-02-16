@@ -82,7 +82,17 @@ class CartPage extends StatelessWidget {
                             value.cartItems[index][2],
                             height: 36,
                           ),
-                          title: Text(value.cartItems[index][0]),
+                          title: Row(
+                            children: [
+                              Text(value.cartItems[index][0]),
+                              const SizedBox(width: 8),
+                              //how many products...
+                              Text(
+                                "x${value.cartItems[index][4] ?? 1}",
+                                style: TextStyle(color: Colors.grey[600], fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
                           subtitle: Text('\$' + value.cartItems[index][1]),
                           trailing: IconButton(
                             icon: Icon(Icons.cancel),

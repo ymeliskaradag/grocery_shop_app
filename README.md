@@ -3,10 +3,16 @@
 A modern, fast, and user-friendly grocery shopping application built with Flutter. This project focuses on a clean UI/UX, efficient state management, and seamless search functionality.
 
 ## 📸 Screenshots
-![Welcome Screen](screenshots/intro_page.png) ![Product Discovery](screenshots/home_page.png)
+<p align="left">
+  <img src="screenshots/intro_page.png" width="100" />
+  <img src="screenshots/home_page.png" width="100" />
+</p>
 
-![Real-time Search](screenshots/search_feature.png) ![Smart Cart Logic](screenshots/cart_page.png) ![Empty State UI](screenshots/empty_cart.png)
----
+<p align="left">
+  <img src="screenshots/search_feature.png" width="48" />
+  <img src="screenshots/cart_page.png" width="48" />
+  <img src="screenshots/empty_cart.png" width="48" />
+</p>
 
 ## ✨ Key Features
 

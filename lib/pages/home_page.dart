@@ -5,8 +5,15 @@ import '../components/grocery_item_tile.dart';
 import '../model/card_model.dart';
 import 'cart_page.dart';
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String searchQuery = "";
 
   @override
   Widget build(BuildContext context) {
@@ -25,22 +32,22 @@ class HomePage extends StatelessWidget{
             const SizedBox(height: 48),
             //good morning
             const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
-                child: Text("Good morning,"),
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text("Good morning,"),
             ),
 
             const SizedBox(height: 4,),
 
             //Lets order fresh items for you
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Text(
-                  "Let's order fresh items for you",
-                  style: GoogleFonts.notoSerif(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                  ),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                "Let's order fresh items for you",
+                style: GoogleFonts.notoSerif(
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
                 ),
+              ),
             ),
             const SizedBox(height: 12),
 
@@ -66,6 +73,11 @@ class HomePage extends StatelessWidget{
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                 child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      searchQuery = value.toLowerCase();
+                    });
+                  },
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Search products",
@@ -99,17 +111,21 @@ class HomePage extends StatelessWidget{
 
             Expanded(
               child: Consumer<CardModel>(builder: (context, value, child){
-                return GridView.builder(itemCount: value.shopItems.length,
+                final filteredItems = value.shopItems.where((item) {
+                  final itemName = item[0].toString().toLowerCase();
+                  return itemName.contains(searchQuery);
+                }).toList();
+                return GridView.builder(itemCount: filteredItems.length,
                   padding: EdgeInsets.all(12.0),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1 / 1.3,),
                   itemBuilder: (context, index) {
                     return GroceryItemTile(
-                      itemName: value.shopItems[index][0],
-                      itemPrice: value.shopItems[index][1],
-                      imagePath: value.shopItems[index][2],
-                      color: value.shopItems[index][3],
+                      itemName: filteredItems[index][0],
+                      itemPrice: filteredItems[index][1],
+                      imagePath: filteredItems[index][2],
+                      color: filteredItems[index][3],
                       onPressed: () {
-                        Provider.of<CardModel>(context, listen: false).addItemToCart(index);
+                        Provider.of<CardModel>(context, listen: false).addItemToCart(filteredItems[index][0]);
                       },
                     );
                   },

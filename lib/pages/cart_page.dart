@@ -81,26 +81,6 @@ class CartPage extends StatelessWidget {
                       ],
                     ),
                     //pay now button
-                    /*Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.green.shade100),
-                      ),
-                      padding: EdgeInsets.all(12),
-                      child: Row(
-                        children: const [
-                          Text(
-                            "Pay Now",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 16,
-                            color: Colors.white,
-                          )
-                        ],
-                      ),
-                    ),*/
                     GestureDetector(
                       onTap: () {
                         // Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentPage()));

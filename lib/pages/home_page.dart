@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../components/grocery_item_tile.dart';
 import '../model/card_model.dart';
-import 'card_page.dart';
+import 'cart_page.dart';
 
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return CardPage();
+          return CartPage();
         })),
         backgroundColor: Colors.black,
         child: Icon(Icons.shopping_bag, color: Colors.white,),
@@ -75,6 +75,7 @@ class HomePage extends StatelessWidget{
                       itemPrice: value.shopItems[index][1],
                       imagePath: value.shopItems[index][2],
                       color: value.shopItems[index][3],
+                      onPressed: () {},
                     );
                   },
                 );

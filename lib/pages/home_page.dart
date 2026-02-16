@@ -42,27 +42,60 @@ class HomePage extends StatelessWidget{
                   ),
                 ),
             ),
+            const SizedBox(height: 12),
 
-            const SizedBox(height: 24),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Text(
+                "Freshness you can trust, quality you can feel.",
+                style: TextStyle(
+                  color: Colors.grey[500],
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            //Search Bar
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Search products",
+                    hintStyle: TextStyle(color: Colors.grey[400]),
+                    icon: Icon(Icons.search, color: Colors.grey[400]),
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 12),
 
             //divider
-            const Padding(
+/*            const Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Divider(
 
               ),
             ),
 
-            const SizedBox(height: 24),
+            const SizedBox(height: 24),*/
 
             //items + grid
-            const Padding(
+            /*const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
                 "Fresh Items",
                 style: TextStyle(fontSize: 16),
               ),
-            ),
+            ),*/
 
             Expanded(
               child: Consumer<CardModel>(builder: (context, value, child){

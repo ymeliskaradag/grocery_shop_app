@@ -18,15 +18,18 @@ class CardModel extends ChangeNotifier{
   get cartItems => _cartItems;
 
   //add item to cart
-  void addItemToCart(int index) {
-    _cartItems.add(_shopItems[index]);
-    notifyListeners();  //for updates
+  void addItemToCart(String name) {
+    int index = _shopItems.indexWhere((item) => item[0] == name);
+    if (index != -1) {
+      _cartItems.add(_shopItems[index]);
+      notifyListeners();
+    }
   }
 
   //remove item from cart
   void removeItemFromCart(int index) {
     _cartItems.removeAt(index);
-    notifyListeners();
+    notifyListeners(); //for updates
   }
 
   //calculate total price
